@@ -1,0 +1,36 @@
+{
+
+    "accounts" : {
+        "id":               { "type": "integer", "default": 0,                      "desc": "Номер" },
+        "name":             { "type": "string", "default": "",                      "desc": "Название" },
+        "user_agent":       { "type": "string", "default": "",                      "desc": "user_agent" },
+        "proxy":            { "type": "string", "default": "off",                   "desc": "Прокси статус" },
+        "proxy_host":       { "type": "string", "default": "",                      "desc": "Прокси сервер" },
+        "proxy_port":       { "type": "string", "default": "",                      "desc": "Прокси порт" },
+        "proxy_username":   { "type": "string", "default": "",                      "desc": "Прокси логин" },
+        "proxy_password":   { "type": "string", "default": "",                      "desc": "Прокси пароль" },
+        "note":             { "type": "string", "default": "",                      "desc": "Заметки" },
+
+        "harvest":          { "type": "string", "default": "off",                   "desc": "Индикатор урожая" },
+        "seeds":            { "type": "string", "default": "off",                   "desc": "Индикатор зерна" },
+        "kapust":           { "type": "integer", "default": 0,                      "desc": "Кол-во капуст" },
+        "pvu_balance":      { "type": "integer", "default": 0,                      "desc": "Баланс PVU" },
+        "le_balance":       { "type": "integer", "default": 0,                      "desc": "Баланс LE" },
+
+        "tool_sPot":        { "type": "integer", "default": 0,                      "desc": "Кол-во мел горшков" },
+        "tool_bPot":        { "type": "integer", "default": 0,                      "desc": "Кол-во больших горшков" },
+        "tool_water":       { "type": "integer", "default": 0,                      "desc": "Кол-во воды" },
+        "tool_crow":        { "type": "integer", "default": 0,                      "desc": "Кол-во ворон" },
+        "tool_green":       { "type": "integer", "default": 0,                      "desc": "Кол-во зелёных домиков" },
+         
+        "inv_mama":         { "type": "integer", "default": 0,                      "desc": "Кол-во мам в инвентаре" },
+        "inv_plants_1":     { "type": "integer", "default": 0,                      "desc": "Кол-во nft-растений в инвентаре" },
+        "inv_plants_2":     { "type": "integer", "default": 0,                      "desc": "Кол-во nft-мам в инвентаре" }
+
+    },
+
+    "settings" : {
+        "lang":                     { "type": "string", "default": "english",       "desc": "Язык интерфейса" }
+    }
+
+}

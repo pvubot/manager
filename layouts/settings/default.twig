@@ -1,0 +1,24 @@
+<div>
+    <div class="col-12">
+        <form id="form-settings">
+
+            <fieldset>
+                <legend class="text-primary">{{ lang.pages.settings.UI }}</legend>
+                <div class="form-group">
+                    <small class="mb-1 d-block">{{ lang.pages.settings.UILang }}</small>
+                    <select name="lang" class="form-control form-control-sm" >
+                        {% for lang in langs %}
+                            <option value="{{ lang }}" {{ settings.lang == lang ? 'selected' : '' }} >{{ lang|capitalize }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-sm btn-success">{{ lang.pages.settings.save }}</button>
+                <small class="javascript-status-settings"></small>
+            </div>
+
+        </form>
+    </div>
+</div>

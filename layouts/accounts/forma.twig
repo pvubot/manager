@@ -1,0 +1,67 @@
+<div class="ml-3 mt-3 mb-3">
+    <h1 class="mb-0">{{ header }}</h1>
+</div>
+<div>
+    <div class="col-12">
+        <form id="form-account">
+
+            <fieldset class="mb-4">
+                <legend class="text-primary" >{{ lang.pages.accounts.form_name }}</legend>
+                <div class="form-group">
+                    <small class="mb-1 d-block">{{ lang.pages.accounts.form_name }}</small>
+                    <input type="text" class="form-control form-control-sm" name="name" value="{{ item.name }}" />
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-4">
+                <legend class="text-primary" >{{ lang.pages.accounts.form_browser_block }}</legend>
+                <div class="form-group">
+                    <small class="mb-1 d-block">{{ lang.pages.accounts.form_browser_name }}</small>
+                    <input type="text" class="form-control form-control-sm" name="user_agent" value="{{ item.user_agent }}" />
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-4">
+                <legend class="text-primary" >Proxy-server</legend>
+                <div class="form-group">
+                    <small class="mb-1 d-block">Proxy-enabled</small>
+                    <select name="proxy" class="form-control form-control-sm" >
+                        <option value="off" {{ item.proxy == 'off' ? ' selected ' : '' }}   >OFF</option>
+                        <option value="on"  {{ item.proxy == 'on' ? ' selected ' : '' }}    >ON</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <small class="mb-1 d-block">PROXY_HOST</small>
+                    <input type="text" class="form-control form-control-sm" name="proxy_host" value="{{ item.proxy_host }}" />
+                </div>
+                <div class="form-group">
+                    <small class="mb-1 d-block">PROXY_PORT</small>
+                    <input type="text" class="form-control form-control-sm" name="proxy_port" value="{{ item.proxy_port }}" />
+                </div>
+                <div class="form-group">
+                    <small class="mb-1 d-block">PROXY_USERNAME</small>
+                    <input type="text" class="form-control form-control-sm" name="proxy_username" value="{{ item.proxy_username }}" />
+                </div>
+                <div class="form-group">
+                    <small class="mb-1 d-block">PROXY_PASSWORD</small>
+                    <input type="text" class="form-control form-control-sm" name="proxy_password" value="{{ item.proxy_password }}" />
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-4">
+                <legend class="text-primary">{{ lang.pages.accounts.form_drugoe_block }}</legend>
+                <div class="form-group">
+                    <small class="mb-1 d-block">{{ lang.pages.accounts.form_drugoe_notes }}</small>
+                    <textarea name="note" class="form-control form-control-sm" >{{ item.note }}</textarea>
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <input type="hidden" name="id" value="{{ item.id|default(0) }}" />
+                <button type="submit" class="btn btn-sm btn-success">{{ lang.pages.accounts.save }}</button>
+                <small class="javascript-status"></small>
+            </div>
+
+        </form>
+    </div>
+</div>

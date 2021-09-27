@@ -1,0 +1,166 @@
+{% for account in accounts %}
+    <tr data-name="{{ account.name }}" data-id="{{ account.id }}" >
+        <td>
+            <div class="float-left">
+                <p class="mb-0 font-weight-bold">
+                    {{ loop.index }}. {{ account.name }}
+                </p>
+                <p class="mb-0 small text-dark text-left">{{ account.note|default('...') }}</p>
+            </div>
+        </td>
+        <td>
+            <p class="mb-0">
+                {% if account.proxy == 'on' %}
+                    http://{{ account.proxy_username }}:{{ account.proxy_password }}@{{ account.proxy_host }}:{{ account.proxy_port }}
+                {% else %}
+                    Без прокси
+                {% endif %}
+            </p>
+            <small>{{ account.user_agent }}</small>
+
+            <div class="row w-100">
+                <div class="col-12">
+
+                    <div class="float-left mr-2 mb-2 clearfix" data-toggle="tooltip" title="Баланс PVU" >
+                        <div class="d-flex align-items-center justify-content-between pt-2 pb-2 pr-2 pl-2 border">
+                            <img src="assets/img/pvu-icon.svg" width="21" />
+                            <p class="mb-0 font-weight-bold ml-2" data-js="pvu-balance">{{ account.pvu_balance|default('0') }}</p>
+                        </div>
+                    </div>
+
+                    <div class="float-left mr-2 mb-2 clearfix" data-toggle="tooltip" title="Баланс LE">
+                        <div class="d-flex align-items-center justify-content-between pt-2 pb-2 pr-2 pl-2 border">
+                            <img src="assets/img/le-icon.svg" width="21" />
+                            <p class="mb-0 font-weight-bold ml-2" data-js="le-balance">{{ account.le_balance|default('0') }}</p>
+                        </div>
+                    </div>
+
+                    <div class="float-left mr-4 mb-2 clearfix" data-toggle="tooltip" title="Кол-во капуст">
+                        <div class="d-flex align-items-center justify-content-between pt-2 pb-2 pr-2 pl-2 border">
+                            <img src="assets/img/kapusta.svg" width="21" />
+                            <p class="mb-0 font-weight-bold ml-2" data-js="kapust-balance">{{ account.kapust|default('0') }}</p>
+                        </div>
+                    </div>
+
+                    <div class="float-left mr-2 mb-2 clearfix" data-toggle="tooltip" title="Кол-во М.Горшков">
+                        <div class="d-flex align-items-center justify-content-between pt-2 pb-2 pr-2 pl-2 border">
+                            <img src="assets/img/small-pot.png" width="23" />
+                            <p class="mb-0 font-weight-bold ml-2" data-js="tool-spot">{{ account.tool_sPot|default('0') }}</p>
+                        </div>
+                    </div>
+
+                    <div class="float-left mr-2 mb-2 clearfix" data-toggle="tooltip" title="Кол-во Б.Горшков">
+                        <div class="d-flex align-items-center justify-content-between pt-2 pb-2 pr-2 pl-2 border">
+                            <img src="assets/img/big-pot.png" width="23" />
+                            <p class="mb-0 font-weight-bold ml-2" data-js="tool-bpot">{{ account.tool_bPot|default('0') }}</p>
+                        </div>
+                    </div>
+
+                    <div class="float-left mr-2 mb-2 clearfix" data-toggle="tooltip" title="Кол-во воды">
+                        <div class="d-flex align-items-center justify-content-between pt-2 pb-2 pr-2 pl-2 border">
+                            <img src="assets/img/water.png" width="23" />
+                            <p class="mb-0 font-weight-bold ml-2" data-js="tool-water">{{ account.tool_water|default('0') }}</p>
+                        </div>
+                    </div>
+
+                    <div class="float-left mr-2 mb-2 clearfix" data-toggle="tooltip" title="Кол-во пугал">
+                        <div class="d-flex align-items-center justify-content-between pt-2 pb-2 pr-2 pl-2 border">
+                            <img src="assets/img/scarecrow.png" width="23" />
+                            <p class="mb-0 font-weight-bold ml-2" data-js="tool-scarecrow">{{ account.tool_crow|default('0') }}</p>
+                        </div>
+                    </div>
+
+                    <div class="float-left mr-4 mb-2 clearfix" data-toggle="tooltip" title="Кол-во з.домиков">
+                        <div class="d-flex align-items-center justify-content-between pt-2 pb-2 pr-2 pl-2 border">
+                            <img src="assets/img/greenhouse.png" width="23" />
+                            <p class="mb-0 font-weight-bold ml-2" data-js="tool-greenhouse">{{ account.tool_green|default('0') }}</p>
+                        </div>
+                    </div>
+
+
+                    <div class="float-left mr-2 mb-2 clearfix" data-toggle="tooltip" title="Кол-во МАМок в инвентаре">
+                        <div class="d-flex align-items-center justify-content-between pt-2 pb-2 pr-2 pl-2 border">
+                            <img src="assets/img/mama-inv.png" width="23" />
+                            <p class="mb-0 font-weight-bold ml-2" data-js="inv-motherplaint">{{ account.inv_mama|default('0') }}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="float-left mr-2 mb-2 clearfix" data-toggle="tooltip" title="Кол-во NFT-МАМок в инвентаре">
+                        <div class="d-flex align-items-center justify-content-between pt-2 pb-2 pr-2 pl-2 border">
+                            <img src="assets/img/mother-plants.png" width="23" />
+                            <p class="mb-0 font-weight-bold ml-2" data-js="inv-inv_plants_2">{{ account.inv_plants_2|default('0') }}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="float-left mr-2 mb-2 clearfix" data-toggle="tooltip" title="Кол-во NFT-Растений в инвентаре">
+                        <div class="d-flex align-items-center justify-content-between pt-2 pb-2 pr-2 pl-2 border">
+                            <img src="assets/img/plant-1.png" width="23" />
+                            <p class="mb-0 font-weight-bold ml-2" data-js="inv-inv_plants_1">{{ account.inv_plants_1|default('0') }}</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-12">
+
+                    <div class="float-left mr-2 mb-2 clearfix" data-toggle="tooltip" title="СИДИТ ВОРОН!" >
+                        <div class="d-flex align-items-center justify-content-between pt-2 pb-2 pr-2 pl-2 border" data-js="indicator-crow" >
+                            <img src="assets/img/crow.png" width="23" />
+                        </div>
+                    </div>
+
+                    <div class="float-left mr-2 mb-2 clearfix" data-toggle="tooltip" title="НУЖЕН ПОЛИВ!" >
+                        <div class="d-flex align-items-center justify-content-between pt-2 pb-2 pr-2 pl-2 border" data-js="indicator-water" >
+                            <img src="assets/img/water.png" width="35" />
+                        </div>
+                    </div>
+
+                    <div class="float-left mr-2 mb-2 clearfix" data-toggle="tooltip" title="СЕМЕЧКО!" >
+                        <div class="d-flex align-items-center justify-content-between pt-2 pb-2 pr-2 pl-2 border" data-js="indicator-seed" >
+                            <img src="assets/img/seed.svg" width="29">
+                        </div>
+                    </div>
+
+                    <div class="float-left mr-4 mb-2 clearfix" data-toggle="tooltip" title="ЗАБРАТЬ LE" >
+                        <div class="d-flex align-items-center justify-content-between pt-2 pb-2 pr-2 pl-2 border" data-js="indicator-harvest" >
+                            <img src="assets/img/le-icon.svg" width="34" />
+                        </div>
+                    </div>
+
+                    <div class="float-left mr-2 mb-2 clearfix" >
+                        <div class="d-flex align-items-center justify-content-between pt-1 pb-1 pr-2 pl-2 border" data-js="indicator-give">                            
+                            <img src="assets/img/give.png" width="28" class="mr-2" data-toggle="tooltip" title="Мировое дерево" >
+                            <span class="d-inline-block h-100 pt-1">
+                                <span class="float-left badge badge-success font-weight-bold ml-2" data-js="give-m_poliv" data-toggle="tooltip" title="Мой полив" >..</span>
+                                <span class="float-left badge badge-danger font-weight-bold ml-2" data-js="give-g_poliv" data-toggle="tooltip" title="Мировой полив" >..</span>
+                                <br>
+                                <span class="float-left badge badge-info font-weight-bold ml-2" data-js="give-lvl0" data-toggle="tooltip" title="Предыдущий день">&lt;&lt;</span>
+                                <span class="float-left badge badge-dark font-weight-bold ml-2" data-js="give-lvl1" data-toggle="tooltip" title="" >R1</span>
+                                <span class="float-left badge badge-dark font-weight-bold ml-2" data-js="give-lvl2" data-toggle="tooltip" title="" >R2</span>
+                                <span class="float-left badge badge-dark font-weight-bold ml-2" data-js="give-lvl3" data-toggle="tooltip" title="" >R3</span>
+                                <span class="float-left badge badge-dark font-weight-bold ml-2" data-js="give-lvl4" data-toggle="tooltip" title="" >R4</span>
+                                <span class="float-left badge badge-dark font-weight-bold ml-2" data-js="give-lvl5" data-toggle="tooltip" title="" >R5</span>
+                                <span class="float-left badge badge-dark font-weight-bold ml-2" data-js="give-lvl6" data-toggle="tooltip" title="" >R6</span>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </td>
+        <td>
+            <p class="mb-0 text-right mr-1"> 
+                <a class="btn btn-sm btn-primary" href="javascript:void(0)" data-toggle="tooltip" title="{{ lang.pages.accounts.run }}" onclick="UI.accounts.run('{{ account.id }}')" >
+                    <i class="fa fa-chrome" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn-sm btn-secondary" href="javascript:void(0)" data-toggle="tooltip" title="{{ lang.pages.accounts.edit }}" onclick="UI.accounts.edit( '{{ account.id }}')" >
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn-sm btn-danger" href="javascript:void(0)" data-toggle="tooltip" title="{{ lang.pages.accounts.remove }}" onclick="UI.accounts.delete( '{{ account.id }}', true )" >
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </a>
+            </p>
+        </td>
+    </tr>
+{% endfor %}

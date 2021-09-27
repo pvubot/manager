@@ -1,0 +1,8 @@
+{
+    "min_width": 1200,
+    "min_height": 740,
+    "dev_tools": "off",
+    "icon_path": "assets/icon.png",
+    "port": 3006,
+    "license_path": "assets/license.txt"
+}
